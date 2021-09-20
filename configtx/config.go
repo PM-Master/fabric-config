@@ -326,11 +326,12 @@ func newGenesisBlock(cg *cb.ConfigGroup, channelID string) (*cb.Block, error) {
 		return nil, fmt.Errorf("marshaling envelope: %v", err)
 	}
 
-	block := newBlock(0, nil)
+	block := newBlock(1)
 	block.Data = &cb.BlockData{Data: [][]byte{blockData}}
 	block.Header.DataHash = blockDataHash(block.Data)
+	block.Header.Key = []byte("config_block")
 
-	lastConfigValue, err := proto.Marshal(&cb.LastConfig{Index: 0})
+	lastConfigValue, err := proto.Marshal(&cb.LastConfig{Index: 1})
 	if err != nil {
 		return nil, fmt.Errorf("marshaling metadata last config value: %v", err)
 	}
@@ -341,7 +342,7 @@ func newGenesisBlock(cg *cb.ConfigGroup, channelID string) (*cb.Block, error) {
 	block.Metadata.Metadata[cb.BlockMetadataIndex_LAST_CONFIG] = lastConfigMetadata
 
 	signatureValue, err := proto.Marshal(&cb.OrdererBlockMetadata{
-		LastConfig: &cb.LastConfig{Index: 0},
+		LastConfig: &cb.LastConfig{Index: 1},
 	})
 	if err != nil {
 		return nil, fmt.Errorf("marshaling metadata signature value: %v", err)
@@ -608,7 +609,7 @@ func parseAddress(address string) (string, int, error) {
 }
 
 // newBlock constructs a block with no data and no metadata.
-func newBlock(seqNum uint64, previousHash []byte) *cb.Block {
+func newBlock(seqNum uint64) *cb.Block {
 	block := &cb.Block{}
 	block.Header = &cb.BlockHeader{}
 	block.Header.Number = seqNum

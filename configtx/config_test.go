@@ -1020,7 +1020,7 @@ func TestNewSystemChannelGenesisBlock(t *testing.T) {
 	},
 	"header": {
 		"data_hash": "zYnpX4Xe0k/Wue2m6lEEJwqMzdApznVVUw7n5SLNWmo=",
-		"number": "0"
+		"number": "1"
 	},
 	"metadata": {
 		"metadata": [

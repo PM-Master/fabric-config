@@ -1,4 +1,4 @@
-module github.com/PM-Master/fabric-config
+module github.com/hyperledger/fabric-config
 
 go 1.14
 
@@ -9,6 +9,4 @@ require (
 	github.com/onsi/gomega v1.9.0
 )
 
-replace (
-	github.com/hyperledger/fabric-protos-go => github.com/PM-Master/fabric-protos-go v0.0.0-20210723052030-20fa23932820
-)
+replace github.com/hyperledger/fabric-protos-go => github.com/PM-Master/fabric-protos-go v0.0.0-20210723052030-20fa23932820
