@@ -1,4 +1,4 @@
-module github.com/hyperledger/fabric-config
+module github.com/PM-Master/fabric-config
 
 go 1.14
 
