@@ -99,9 +99,7 @@ func TestEmitDefaultsBug(t *testing.T) {
 	gt := NewGomegaWithT(t)
 
 	block := &cb.Block{
-		Header: &cb.BlockHeader{
-			PreviousHash: []byte("foo"),
-		},
+		Header: &cb.BlockHeader{},
 		Data: &cb.BlockData{
 			Data: [][]byte{
 				protoMarshalOrPanic(&cb.Envelope{
@@ -148,8 +146,8 @@ func TestEmitDefaultsBug(t *testing.T) {
 	},
 	"header": {
 		"data_hash": null,
-		"number": "0",
-		"previous_hash": "Zm9v"
+		"key": null,
+		"number": "0"
 	},
 	"metadata": null
 }

@@ -1020,8 +1020,7 @@ func TestNewSystemChannelGenesisBlock(t *testing.T) {
 	},
 	"header": {
 		"data_hash": "zYnpX4Xe0k/Wue2m6lEEJwqMzdApznVVUw7n5SLNWmo=",
-		"number": "0",
-		"previous_hash": null
+		"number": "0"
 	},
 	"metadata": {
 		"metadata": [
@@ -1780,8 +1779,7 @@ func TestNewApplicationChannelGenesisBlock(t *testing.T) {
 	},
 	"header": {
 		"data_hash": "2FX2z5r8jRx6Jt5QKHt6Ch/eU0ay1bZPrncOL1Q7pIE=",
-		"number": "0",
-		"previous_hash": null
+		"number": "0"
 	},
 	"metadata": {
 		"metadata": [
