@@ -432,7 +432,7 @@ func TestNewSystemChannelGenesisBlock(t *testing.T) {
 	block, err := NewSystemChannelGenesisBlock(profile, "testsystemchannel")
 	gt.Expect(err).ToNot(HaveOccurred())
 	gt.Expect(block).ToNot(BeNil())
-	gt.Expect(block.Header.Number).To(Equal(uint64(0)))
+	gt.Expect(block.Header.Number).To(Equal(uint64(1)))
 
 	org1CertBase64, org1CrlBase64 := certCRLBase64(t, profile.Consortiums[0].Organizations[0].MSP)
 	org2CertBase64, org2CrlBase64 := certCRLBase64(t, profile.Consortiums[0].Organizations[1].MSP)
@@ -1020,6 +1020,7 @@ func TestNewSystemChannelGenesisBlock(t *testing.T) {
 	},
 	"header": {
 		"data_hash": "zYnpX4Xe0k/Wue2m6lEEJwqMzdApznVVUw7n5SLNWmo=",
+		"key": "%[6]s",
 		"number": "1"
 	},
 	"metadata": {
@@ -1032,7 +1033,7 @@ func TestNewSystemChannelGenesisBlock(t *testing.T) {
 		]
 	}
 }
-`, org1CertBase64, org1CrlBase64, org2CertBase64, org2CrlBase64, ordererOrgCertBase64, ordererOrgCrlBase64)
+`, org1CertBase64, org1CrlBase64, org2CertBase64, org2CrlBase64, ordererOrgCertBase64, ordererOrgCrlBase64, []byte("config_block"))
 
 	expectedBlock := &cb.Block{}
 	err = protolator.DeepUnmarshalJSON(bytes.NewBufferString(expectBlockJSON), expectedBlock)
@@ -1152,7 +1153,7 @@ func TestNewApplicationChannelGenesisBlock(t *testing.T) {
 	block, err := NewApplicationChannelGenesisBlock(profile, "testapplicationchannel")
 	gt.Expect(err).ToNot(HaveOccurred())
 	gt.Expect(block).ToNot(BeNil())
-	gt.Expect(block.Header.Number).To(Equal(uint64(0)))
+	gt.Expect(block.Header.Number).To(Equal(uint64(1)))
 
 	org1CertBase64, org1CrlBase64 := certCRLBase64(t, profile.Application.Organizations[0].MSP)
 	org2CertBase64, org2CrlBase64 := certCRLBase64(t, profile.Application.Organizations[1].MSP)

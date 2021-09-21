@@ -455,7 +455,7 @@
 												"mod_policy": "Admins",
 												"value": {
 													"capabilities": {
-														"V1_1": {}
+														"V2_0": {}
 													}
 												},
 												"version": "0"
@@ -537,15 +537,6 @@
 											"name": "SHA256"
 										},
 										"version": "0"
-									},
-									"OrdererAddresses": {
-										"mod_policy": "/Channel/Orderer/Admins",
-										"value": {
-											"addresses": [
-												"127.0.0.1:7050"
-											]
-										},
-										"version": "0"
 									}
 								},
 								"version": "0"
@@ -559,15 +550,15 @@
 							"channel_id": "test",
 							"epoch": "0",
 							"extension": null,
-							"timestamp": "2019-04-21T19:35:42Z",
+							"timestamp": "2021-09-21T16:03:43Z",
 							"tls_cert_hash": null,
-							"tx_id": "7c179b7100bb0c0b33dad5114f0294e2509e9be9fbfa0ac9d38b43703ea57138",
+							"tx_id": "b7c451f7b7d3e568f23fc8b3be6193db7bb5f73f630d4856e7dc5f71f2b453af",
 							"type": 1,
 							"version": 1
 						},
 						"signature_header": {
 							"creator": null,
-							"nonce": "1gQF896QI8wgNZSwJ73vaPUcuOugIvB/"
+							"nonce": "MOkfGUeXUhEijBi4+b8IwTk2bqR8+D3f"
 						}
 					}
 				},
@@ -576,13 +567,14 @@
 		]
 	},
 	"header": {
-		"data_hash": "idkpZn9B0jX9nL0kASTuPnA1PJDeXToBquHOas7f3Kk=",
-		"number": "0",
-		"previous_hash": null
+		"data_hash": "mP7YdFGE9xY6o9bmSQ0BLnv7rA7yhWUtJ+K3W19Kv0o=",
+		"key": null,
+		"number": "1"
 	},
 	"metadata": {
 		"metadata": [
-			"",
+			"CgQKAggB",
+			"CgIIAQ==",
 			"",
 			"",
 			""
